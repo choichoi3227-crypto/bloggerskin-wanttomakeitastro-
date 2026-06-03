@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="커뮤니티" description="Cloudflare WebSocket 기반 실시간 커뮤니티 채널입니다." path="/community">
+  <section class="page-title"><span class="kicker">Community</span><h1>실시간 커뮤니티</h1><p>Cloudflare Worker WebSocket 엔드포인트와 연결되는 회원형 대화 공간입니다.</p></section>
+  <section class="section">
+    <div class="admin-card chat-box" data-chat>
+      <div class="chat-log" id="chatLog"><div class="chat-message">연결 후 커뮤니티 메시지가 여기에 표시됩니다.</div></div>
+      <form class="form-grid" id="chatForm"><label>메시지<input id="chatInput" placeholder="개선 의견 또는 질문을 입력하세요" /></label><button class="solid-button" type="submit">전송</button></form>
+    </div>
+  </section>
+  <script>import '@/scripts/community.ts';</script>
+</BaseLayout>

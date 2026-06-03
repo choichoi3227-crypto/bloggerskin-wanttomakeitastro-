@@ -1,0 +1,12 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="로그인" description="클라우드프레스 회원 로그인 페이지입니다." path="/auth/login" noindex>
+  <section class="auth-wrap"><form class="auth-card form-grid" method="post" action="/api/auth/login">
+    <h1>로그인</h1>
+    <label>이메일<input type="email" name="email" required autocomplete="email" /></label>
+    <label>비밀번호<input type="password" name="password" required autocomplete="current-password" /></label>
+    <button class="solid-button" type="submit">로그인</button>
+    <p>계정이 없나요? <a href="/auth/signup">회원가입</a></p>
+  </form></section>
+</BaseLayout>

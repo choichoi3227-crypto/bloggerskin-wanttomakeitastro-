@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7faf9"/>
+  <rect x="86" y="86" width="1028" height="458" rx="48" fill="#18313a"/>
+  <path d="M86 410h1028v86c0 26.5-21.5 48-48 48H134c-26.5 0-48-21.5-48-48v-86z" fill="#f4a261"/>
+  <path d="M934 86h132c26.5 0 48 21.5 48 48v410H934z" fill="#7c3aed" opacity=".9"/>
+  <text x="140" y="260" font-family="Arial, sans-serif" font-size="86" font-weight="800" fill="white">클라우드프레스</text>
+  <text x="145" y="345" font-family="Arial, sans-serif" font-size="34" fill="#d5e8ec">정책 정보를 대면 없이 압축해 확인하는 콘텐츠 플랫폼</text>
+  <text x="145" y="478" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#18313a">Cloud · Press · Verified Publishing</text>
+</svg>
