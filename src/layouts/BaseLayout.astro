@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { buildTitle, jsonLdWebsite, type SeoProps } from '@/lib/seo';
+import { env } from 'cloudflare:workers';
 
 interface Props extends SeoProps {
   noindex?: boolean;
@@ -16,8 +17,9 @@ const {
   updatedAt,
   noindex = false
 } = Astro.props;
-const siteUrl = Astro.locals.runtime?.env?.SITE_URL ?? 'https://cloudpress.kr';
-const siteName = Astro.locals.runtime?.env?.SITE_NAME ?? '클라우드프레스';
+
+const siteUrl = (env as any)?.SITE_URL ?? 'https://cloudpress.kr';
+const siteName = (env as any)?.SITE_NAME ?? '클라우드프레스';
 const canonical = new URL(path, siteUrl).toString();
 const imageUrl = new URL(image, siteUrl).toString();
 const fullTitle = buildTitle(title, siteName);
