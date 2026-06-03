@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "deploy": "wrangler deploy",
+    "deploy": "astro build && wrangler deploy --config dist/server/wrangler.json",
     "db:migrate:local": "wrangler d1 migrations apply CLOUDPRESS_DB --local",
     "db:migrate:remote": "wrangler d1 migrations apply CLOUDPRESS_DB --remote",
     "admin:hash": "tsx scripts/hash-password.ts"
