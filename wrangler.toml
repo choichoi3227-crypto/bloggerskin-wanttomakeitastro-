@@ -26,3 +26,8 @@ GITHUB_IMAGE_DIR = "images"
 binding = "SESSION"
 id = "19e5e273e99941fbb963300e56dbdf9e"
 
+[observability.logs]
+enabled = false
+invocation_logs = true
+
+
