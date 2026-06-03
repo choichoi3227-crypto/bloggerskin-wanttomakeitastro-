@@ -18,7 +18,7 @@ ADMIN_EMAIL = "choichoi3227@gmail.com"
 # 배포 전 wrangler secret put DATA_GO_KR_API_KEY 로 공공데이터포털 서비스키를 저장하세요.
 # 배포 전 wrangler secret put GITHUB_TOKEN 로 images/ 및 콘텐츠 커밋용 Fine-grained PAT를 저장하세요.
 GITHUB_OWNER = "choichoi3227-crypto"
-GITHUB_REPO = "REPLACE_WITH_GITHUB_REPO"
+GITHUB_REPO = "bloggerskin-wanttomakeitastro-"
 GITHUB_BRANCH = "main"
 GITHUB_IMAGE_DIR = "images"
 
