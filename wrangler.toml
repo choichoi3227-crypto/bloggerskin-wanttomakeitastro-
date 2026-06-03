@@ -1,28 +1,28 @@
 name = "cloudpress"
-compatibility_date = "2026-06-02"
+compatibility_date = "2026-05-14"
 compatibility_flags = ["nodejs_compat"]
 assets = { directory = "./dist", binding = "ASSETS" }
 
 [[d1_databases]]
 binding = "DB"
 database_name = "cloudpress-db"
-database_id = "REPLACE_WITH_CLOUDFLARE_D1_DATABASE_ID"
+database_id = "4360b8a4-8cc6-40a3-a70e-cbdd4bbead4a"
 migrations_dir = "migrations"
 
 [vars]
-SITE_URL = "https://cloudpress.kr"
+SITE_URL = "https://cloud-press.co.kr"
 SITE_NAME = "클라우드프레스"
 ADMIN_EMAIL = "choichoi3227@gmail.com"
 # 배포 전 wrangler secret put ADMIN_PASSWORD_HASH 로 PBKDF2 해시를 저장하세요.
 # 배포 전 wrangler secret put SESSION_SECRET 로 32바이트 이상 랜덤 문자열을 저장하세요.
 # 배포 전 wrangler secret put DATA_GO_KR_API_KEY 로 공공데이터포털 서비스키를 저장하세요.
 # 배포 전 wrangler secret put GITHUB_TOKEN 로 images/ 및 콘텐츠 커밋용 Fine-grained PAT를 저장하세요.
-GITHUB_OWNER = "REPLACE_WITH_GITHUB_OWNER"
+GITHUB_OWNER = "choichoi3227-crypto"
 GITHUB_REPO = "REPLACE_WITH_GITHUB_REPO"
 GITHUB_BRANCH = "main"
 GITHUB_IMAGE_DIR = "images"
 
 [[kv_namespaces]]
 binding = "SESSION"
-id = "REPLACE_WITH_CLOUDFLARE_KV_NAMESPACE_ID"
+id = "19e5e273e99941fbb963300e56dbdf9e"
 
