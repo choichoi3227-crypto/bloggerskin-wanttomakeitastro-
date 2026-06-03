@@ -1,7 +1,7 @@
 name = "bloggerskin-wanttomakeitastro"
 compatibility_date = "2026-05-14"
 compatibility_flags = ["nodejs_compat"]
-assets = { directory = "./dist", binding = "ASSETS" }
+assets = { directory = ".", binding = "ASSETS" }
 
 [[d1_databases]]
 binding = "DB"
