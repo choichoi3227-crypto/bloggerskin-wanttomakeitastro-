@@ -1,0 +1,9 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContentList from '@/components/ContentList.astro';
+import { getContentByType } from '@/lib/content';
+---
+<BaseLayout title="공지" description="클라우드프레스 운영 공지와 검수 정책 안내입니다." path="/notices">
+  <section class="page-title"><span class="kicker">Notices</span><h1>공지</h1><p>운영 원칙, 콘텐츠 검수, 개인정보 관련 변경 사항을 안내합니다.</p></section>
+  <section class="section"><ContentList items={getContentByType('notice')} /></section>
+</BaseLayout>

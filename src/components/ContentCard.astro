@@ -1,0 +1,16 @@
+---
+import type { ContentItem } from '@/lib/content';
+const { item } = Astro.props as { item: ContentItem };
+const typeLabel = { post: '게시글', notice: '공지', community: '커뮤니티', forum: '포럼' }[item.type];
+---
+<article class="content-card">
+  <a href={`/${item.type === 'post' ? 'posts' : item.type === 'notice' ? 'notices' : item.type}/${item.slug}`}>
+    <span class="eyebrow">{typeLabel} · {item.category}</span>
+    <h2>{item.title}</h2>
+    <p>{item.excerpt}</p>
+    <div class="card-meta">
+      <time datetime={item.publishedAt}>{new Date(item.publishedAt).toLocaleDateString('ko-KR')}</time>
+      <span class:list={['access-chip', item.visibility === 'members' && 'members']}>{item.visibility === 'members' ? '회원 전용' : '공개'}</span>
+    </div>
+  </a>
+</article>

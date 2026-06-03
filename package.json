@@ -1,0 +1,27 @@
+{
+  "name": "cloudpress",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply CLOUDPRESS_DB --local",
+    "db:migrate:remote": "wrangler d1 migrations apply CLOUDPRESS_DB --remote",
+    "admin:hash": "tsx scripts/hash-password.ts"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "13.6.0",
+    "astro": "6.4.2",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "@types/node": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "wrangler": "latest"
+  }
+}

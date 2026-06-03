@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AdminEditor from '@/components/AdminEditor.astro';
+---
+<BaseLayout title="관리자 대시보드" description="클라우드프레스 관리자 전용 콘텐츠·지원금·미디어 관리 화면입니다." path="/admin" noindex>
+  <div class="admin-layout">
+    <aside class="admin-sidebar"><strong>관리자 메뉴</strong><a href="#subsidy">정부지원금 수집</a><a href="#editor">게시글 관리</a><a href="#notice">공지 관리</a><a href="#community">커뮤니티/포럼</a></aside>
+    <section class="admin-main">
+      <h1>클라우드프레스 관리자</h1>
+      <div class="admin-grid">
+        <div class="admin-card"><span class="eyebrow">D1</span><h3>콘텐츠 DB</h3><p>회원, 게시글, 공지, 포럼 메타데이터를 저장합니다.</p></div>
+        <div class="admin-card"><span class="eyebrow">GitHub</span><h3>파일 저장소</h3><p>생성 파일과 images/ 미디어를 GitHub 커밋으로 보관합니다.</p></div>
+        <div class="admin-card"><span class="eyebrow">Admin Only</span><h3>지원금 검색</h3><p>사용자 화면에는 검색 버튼과 원천 지원금 결과가 표시되지 않습니다.</p></div>
+      </div>
+      <section id="subsidy" class="section">
+        <div class="section-header"><div><span class="eyebrow">실시간 수집</span><h2>정부지원금 관리자 검색</h2><p>공공데이터포털 보조금24 API를 호출합니다. 실제 데이터 원천이므로 서비스키가 없으면 결과 대신 설정 안내를 반환합니다.</p></div></div>
+        <form class="admin-card form-grid" id="subsidyForm">
+          <label>검색어<input name="query" placeholder="예: 청년, 출산, 주거" required /></label>
+          <button class="solid-button" type="submit">관리자 전용 실시간 검색</button>
+          <div id="subsidyResults" class="subsidy-results"></div>
+        </form>
+      </section>
+      <section id="editor" class="section"><div class="section-header"><div><span class="eyebrow">Editor</span><h2>블록 에디터 + HTML 에디터</h2><p>지원금 섹션에 추가하거나 직접 카테고리를 지정해 게시할 수 있습니다.</p></div></div><AdminEditor /></section>
+    </section>
+  </div>
+  <script>import '@/scripts/admin.ts';</script>
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+export const prerender = true;
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getContentByType } from '@/lib/content';
+export function getStaticPaths() { return getContentByType('post').map((item) => ({ params: { slug: item.slug }, props: { item } })); }
+const { item } = Astro.props;
+---
+<BaseLayout title={item.title} description={item.excerpt} path={`/posts/${item.slug}`} image={item.thumbnail} type="article" publishedAt={item.publishedAt} updatedAt={item.updatedAt}>
+  <section class="page-title"><span class="kicker">{item.category}</span><h1>{item.title}</h1><p>{item.excerpt}</p></section>
+  <article class="article-shell"><div class="article-body" set:html={item.html} /></article>
+</BaseLayout>

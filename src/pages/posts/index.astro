@@ -1,0 +1,9 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContentList from '@/components/ContentList.astro';
+import { getContentByType } from '@/lib/content';
+---
+<BaseLayout title="게시글" description="클라우드프레스의 검수된 정책 가이드와 생활 정보 게시글입니다." path="/posts">
+  <section class="page-title"><span class="kicker">Posts</span><h1>게시글</h1><p>회원에게는 전체 콘텐츠가 제공되고 비로그인 사용자는 공개 게시글만 확인할 수 있습니다.</p></section>
+  <section class="section"><ContentList items={getContentByType('post')} /></section>
+</BaseLayout>

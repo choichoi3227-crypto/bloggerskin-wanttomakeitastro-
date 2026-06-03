@@ -1,0 +1,9 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContentList from '@/components/ContentList.astro';
+import { getContentByType } from '@/lib/content';
+---
+<BaseLayout title="포럼" description="사이트 장애, 개선 사항, 콘텐츠 정정 요청을 논의하는 회원 중심 포럼입니다." path="/forum">
+  <section class="page-title"><span class="kicker">Forum</span><h1>장애·개선 포럼</h1><p>회원 로그인 후 모든 포럼 글에 접근할 수 있습니다.</p></section>
+  <section class="section"><ContentList items={getContentByType('forum')} /></section>
+</BaseLayout>
