@@ -1,4 +1,4 @@
-name = "cloudpress"
+name = "bloggerskin-wanttomakeitastro"
 compatibility_date = "2026-05-14"
 compatibility_flags = ["nodejs_compat"]
 assets = { directory = "./dist", binding = "ASSETS" }
