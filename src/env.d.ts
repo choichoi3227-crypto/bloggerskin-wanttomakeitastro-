@@ -7,7 +7,7 @@ declare class WebSocketPair { 0: WebSocket; 1: WebSocket; }
 
 declare namespace App {
   interface Locals {
-    runtime: { env: Env; cf?: unknown; ctx?: ExecutionContext };
+    cfContext?: ExecutionContext;
   }
 }
 
@@ -25,4 +25,26 @@ interface Env {
   GITHUB_REPO: string;
   GITHUB_BRANCH: string;
   GITHUB_IMAGE_DIR: string;
+  SESSION: KVNamespace;
+}
+
+// cloudflare:workers module declaration
+declare module 'cloudflare:workers' {
+  const env: Env;
+  export { env };
+}
+
+interface KVNamespace {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
+  delete(key: string): Promise<void>;
+}
+
+interface Fetcher {
+  fetch(request: Request | string, init?: RequestInit): Promise<Response>;
+}
+
+interface ExecutionContext {
+  waitUntil(promise: Promise<unknown>): void;
+  passThroughOnException(): void;
 }
